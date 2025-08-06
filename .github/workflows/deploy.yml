@@ -1,0 +1,22 @@
+name: Flask CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Kodni klon qilish
+        uses: actions/checkout@v3
+
+      - name: Docker versiyasini tekshirish
+        run: docker --version
+
+      - name: Docker image qurish
+        run: docker build -t flask-ci-cd-demo .
+
+      - name: Docker konteynerni ishga tushurish
+        run: docker run -d -p 5000:5000 flask-ci-cd-demo
