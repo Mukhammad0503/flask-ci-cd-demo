@@ -11,6 +11,7 @@ def submit():
     name = request.form['name']
     phone = request.form['phone']
     print(f"Yangi foydalanuvchi: {name}, Tel: {phone}")
+    print("CI/CD test ishladi")
     return 'Maʼlumot qabul qilindi!'
 
 if __name__ == '__main__':
